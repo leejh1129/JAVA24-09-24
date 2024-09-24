@@ -20,6 +20,7 @@ public class System117 {
 			}
 		}
 		System.out.println("종료");
+		System.out.println("종료");
 		
 	}// end main
 
