@@ -18,19 +18,22 @@ public class Doself {
 //		}
 		
 		// 2.번 동전 계산 프로그램
+//		System.out.println("교환할 금액 입력 : ");
 //		int money = Integer.parseInt(sc.nextLine());
-//		int cnt = 0;
-//		
-//		
-//		System.out.println("##교환할 금액 : " + money);	
-//		System.out.println("500원 짜리 : ");	
-//		System.out.println("100원 짜리 : ");	
-//		System.out.println("50원 짜리 : ");	
-//		System.out.println("10원 짜리 : ");
-//		System.out.println("교환 금액 : ");
-//		System.out.println("남은 금액 : ");
-
+//		int coin = money;
+//		System.out.println("##교환할 금액 : " + coin);	
+//		System.out.println("500원 짜리 : " +  coin / 500);
+//		coin = money % 500;
+//		System.out.println("100원 짜리 : " + coin / 100);	
+//		coin = money % 100;
+//		System.out.println("50원 짜리 : " + coin / 50);
+//		coin = money % 50;
+//		System.out.println("10원 짜리 : " + coin / 10);
+//		coin = money % 10;
+//		System.out.println("교환 금액 : " + (money-coin));
+//		System.out.println("남은 금액 : " + coin);
 		
+
 		
 		// 3.번 숫자 추측 게임
 //		int ran = (int)(Math.random() * 100) + 1;
@@ -60,6 +63,7 @@ public class Doself {
 //			System.out.println("");
 //		}
 		
+		
 		// 5.번 섭씨-화씨 온도 변환 프로그램
 //		boolean run = true; 
 //		while(run) {			
@@ -80,7 +84,7 @@ public class Doself {
 //			case 2:
 //				System.out.println("화씨온도 입력 : ");
 //				temperature = Double.parseDouble(sc.nextLine());
-//				temperature = (double)9/5*(temperature+32);
+//				temperature = (double)9/5*temperature+32;
 //				System.out.println("화씨온도" + temperature);
 //				break;
 //			case 3:
@@ -89,36 +93,55 @@ public class Doself {
 //				default:
 //					
 //			}
-//			System.out.println("program end");
 //		}
+//		System.out.println("program end");
+		
 		
 		
 		// 6.번 가위바위보 게임 프로그램
-//		while() {
-//			int ran = (int)(Math.random() * 2);
-//			System.out.println("## 가위(0) 바위(1) 보(2) : ");
+//		while(true) {
+//			int com = 0;
+//			int human = 0;
+//			int ran = (int)(Math.random() * 3);
+//			String cnt = ""; 
+//			System.out.print("## 가위(0) 바위(1) 보(2) : ");
 //			int game = Integer.parseInt(sc.nextLine());
-//			if(ran == 0 && game == 1) {
-//				System.out.println("사람 승리");
+//
+//			if(game - ran == -2 || game - ran == 1) {
+//				System.out.printf("사람 (%d), 컴 (%d) 사람 승리 \n", game, ran);
+//				human++;
+//			}else if(game == ran){
+//				System.out.printf("사람 (%d), 컴 (%d) 비겼음 \n", game, ran);
+//			}else if(ran - game == -2 || ran - game == 1) {
+//				System.out.printf("사람 (%d), 컴 (%d) 컴 승리 \n", game, ran);
+//				com++;
+//			}else if(game >= 3){
+//				System.out.println("game over");
+//				break;
 //			}
-//			
 //		}
 		
 		
 		
 		
 		// 7.번 3,6,9게임 프로그램
-		for(int i = 1; i <= 50; i++) {
-			String str = "";
-			if(str) {
-					str = "♥";
-			}
-			System.out.printf("%2s",str + "\t");
-			if(i % 10 == 0) {
-				System.out.println();
-			}
-		}
-
+		
+//		for(int i = 1; i <= 50; i++) {
+//			if(i % 10 == 3 | i % 10== 6 | i % 10 == 9) {
+//				if(i / 10 == 3) {
+//					System.out.print("♥♥\t");
+//				}else {
+//					System.out.print("♥\t");
+//				}
+//			}else if(i / 10 == 3) {
+//				System.out.print("♥\t");
+//			}else {			
+//				System.out.print(i + "\t");
+//			}
+//			if(i % 10 == 0) {
+//				System.out.println();
+//			}
+//		}
 	}
 
 }
