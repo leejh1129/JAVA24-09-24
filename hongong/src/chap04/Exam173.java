@@ -48,11 +48,25 @@ public class Exam173 {
 		// 구구단 : 중첩 for
 		
 		for(int i = 2; i <= 9; i++) {
-			System.out.println("===== " + i + " 단 =====");
+			System.out.println("=== " + i + " 단 ===");
 			for(int j = 1; j <=9; j++) {
 				System.err.printf("%d X %d = %2d ", i, j , i*j);
 				System.out.println(i + " X " + j + " = " + i*j);
 			}
+		}
+		
+		
+		
+		//
+		for(int i = 2; i <= 9; i++) {
+			System.out.print("=====" + i +"단" + "==== \t");
+		}
+		System.out.println();
+		for(int j = 1; j <= 9; j++) {
+			for(int z = 2; z <= 9; z++) {
+				System.out.printf("%d X %d = %2d \t", z, j , z*j);
+			}
+			System.out.println("");
 		}
 		
 		
