@@ -99,22 +99,22 @@ public class Doself {
 		
 		
 		// 6.번 가위바위보 게임 프로그램
+//		int com = 0;
+//		int human = 0;
 //		while(true) {
-//			int com = 0;
-//			int human = 0;
 //			int ran = (int)(Math.random() * 3);
 //			String cnt = ""; 
 //			System.out.print("## 가위(0) 바위(1) 보(2) : ");
 //			int game = Integer.parseInt(sc.nextLine());
 //
 //			if(game - ran == -2 || game - ran == 1) {
-//				System.out.printf("사람 (%d), 컴 (%d) 사람 승리 \n", game, ran);
 //				human++;
+//				System.out.printf("사람 (%d), 컴 (%d) 사람 승리 \n", human, com);
 //			}else if(game == ran){
-//				System.out.printf("사람 (%d), 컴 (%d) 비겼음 \n", game, ran);
+//				System.out.printf("사람 (%d), 컴 (%d) 비겼음 \n", human, com);
 //			}else if(ran - game == -2 || ran - game == 1) {
-//				System.out.printf("사람 (%d), 컴 (%d) 컴 승리 \n", game, ran);
 //				com++;
+//				System.out.printf("사람 (%d), 컴 (%d) 컴 승리 \n", human, com);
 //			}else if(game >= 3){
 //				System.out.println("game over");
 //				break;
@@ -142,6 +142,9 @@ public class Doself {
 //				System.out.println();
 //			}
 //		}
+		
+		sc.close();
+		
 	}
 
 }
