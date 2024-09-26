@@ -3,7 +3,7 @@ package 이주현;
 public class Array {
 
 	public static void main(String[] args) {
-		
+
 		// 1.번
 //		int[] nums = new int[10];
 //		for(int i = 0; i < nums.length; i++) {
@@ -41,7 +41,7 @@ public class Array {
 //			}
 //			System.out.println();
 //		}
-		
+
 		
 //		// 3.번
 //		int[][] seat = new int[3][10];
@@ -58,7 +58,7 @@ public class Array {
 //			System.out.println();
 //		}
 //		System.out.println("현재 관객 수 : " + cnt);
-		
+
 		
 		// 4.번
 //		int[][] susu = new int [3][5];
@@ -77,40 +77,40 @@ public class Array {
 //		for(int i = 0; i < avg.length; i++) {
 //			System.out.printf("%d 번 학생 평균 : %d \n", i+1 , avg[i]);
 //		}
-		
+
 		
 		// 5.번
-//		String[] cardStr = {"Clubs","Diamonds","Hearts","Spades"};
-//		String[] cardNum = {"2","3","4","5","6","7","8","9","Jack","Queen","King","Ace"};
-//		
-//		for(int i = 0; i < 5; i++) {
-//			int ranStr = (int)(Math.random() * 3);
-//			int ranNum = (int)(Math.random() * 11);
-//			System.out.printf("%s의 %s \n", cardStr[ranStr], cardNum[ranNum]);
-//		}
+		String[] cardStr = {"Clubs","Diamonds","Hearts","Spades"};
+		String[] cardNum = {"2","3","4","5","6","7","8","9","Jack","Queen","King","Ace"};
 		
+		for(int i = 0; i < 5; i++) {
+			int ranStr = (int)(Math.random() * 3);
+			int ranNum = (int)(Math.random() * 11);
+			System.out.printf("%s의 %s \n", cardStr[ranStr], cardNum[ranNum]);
+		}
+
 		
 		// 6.번
 //		int[][] nums = new int[3][5];
-//		int cnt = 0;
-//		for(int i = 0; i < nums.length; i++) {
-//			for(int j = 0; j < nums[i].length; j++) {
-//				if(cnt < 5) {
-//					int ran = (int)(Math.random() * 2);				
-//					nums[i][j] = ran;
-//					
-//					if(ran == 1) {					
-//						cnt++;
-//					}
-//				}else {
-//					nums[i][j] = 0;
-//				}
+//		int cnt = 0;		
+//		
+//		while(cnt < 5) {
+//			
+//			int ran = (int)(Math.random() * 3);
+//			int ran2 = (int)(Math.random() * 5);
+//			
+//			if(nums[ran][ran2] == 0) {
+//				nums[ran][ran2] = 1;
+//				cnt++;
+//			}
+//		}
+//		
+//		for (int i = 0; i < nums.length; i++) {
+//			for (int j = 0; j < nums[i].length; j++) {
 //				System.out.print(nums[i][j] + " ");
 //			}
 //			System.out.println();
 //		}
-		
-		
 
 	}
 
