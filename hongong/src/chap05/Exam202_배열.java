@@ -2,7 +2,7 @@ package chap05;
 
 import java.util.Arrays;
 
-public class Eaxm202_배열 {
+public class Exam202_배열 {
 
 	public static void main(String[] args) {
 		

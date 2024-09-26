@@ -2,7 +2,7 @@ package chap05;
 
 import java.util.Scanner;
 
-public class Eaxm224_배열 {
+public class Exam224_배열 {
 
 	public static void main(String[] args) {
 		
