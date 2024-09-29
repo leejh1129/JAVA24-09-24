@@ -27,7 +27,7 @@ public class Student1 {
 		return plus() / 3;
 	}
 
-	String su() {
+	String grade() {
 		if(avg() >= 90) {
 			return "A";
 		}else if((avg()) >= 80){
@@ -43,7 +43,7 @@ public class Student1 {
 	
 
 	void result() {
-		System.out.printf("%s : %s : %d : %d : %d : %d : %f : %s \n", name_id, name, korean, math, english, plus(),avg(),su());
+		System.out.printf("%s : %s : %d : %d : %d : %d : %f : %s \n", name_id, name, korean, math, english, plus(),avg(),grade());
 	}
 
 
