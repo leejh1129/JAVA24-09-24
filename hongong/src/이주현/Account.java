@@ -4,13 +4,13 @@ public class Account {
 
 	private String ano;
 	private String owner;
-	private int balence;
+	private int balance;
 	
 	
 	Account(String ano, String owner, int balence){
 		this.ano = ano;
 		this.owner = owner;
-		this.balence = balence;
+		this.balance = balence;
 	}
 	
 	public String getAno() {
@@ -25,11 +25,22 @@ public class Account {
 	public void setOwner(String owner) {
 		this.owner = owner;
 	}
-	public int getBalence() {
-		return balence;
+	public int getBalance() {
+		return balance;
 	}
-	public void setBalence(int balence) {
-		this.balence = balence;
+	public void setBalance(int balence) {
+		this.balance = balence;
 	}
+
+	
+	public static Account acCheck(Account[] accounts, String ano) {
+		for(Account ac : accounts) {
+			if(ac != null && ac.getAno().equals(ano)) {				
+				return ac;
+			}
+		}
+		return null;
+	}
+	
 	
 }

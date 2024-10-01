@@ -9,7 +9,7 @@ public class bankApp {
 		 boolean run = true;
 		 Scanner sc = new Scanner(System.in); 
 		 Account[] accounts = new Account[100];
-		 Account ac = null;
+		 int asCnt = 0;
 		 
 		 while(run) {			 
 			 System.out.println("---------------------------------------------");
@@ -28,52 +28,67 @@ public class bankApp {
 				 System.out.print("계좌주 : ");
 				 String owner = sc.nextLine();
 				 System.out.print("초기입금액 : ");
-				 int balence = Integer.parseInt(sc.nextLine());
-				 				 
-				 ac = new Account(ano, owner, balence);
-				 for(int i = 0; i < accounts.length; i++) {
-					 if(accounts[i] == null) {
-						 accounts[i] = ac;
-						 System.out.println("결과 : 계좌가 생성되었습니다.");						 
-						 break;
-					 }
-				 }
+				 int balance = Integer.parseInt(sc.nextLine());
+				 
+				 accounts[asCnt] = new Account(ano, owner, balance);
+				 asCnt++;
+				 
 				 
 				 break;
 			 case 2:
 				 System.out.println("--------");
 				 System.out.println("계좌목록");
 				 System.out.println("--------");
-				 for(Account account : accounts) {
-					 if(account != null) {						 
-						 System.out.printf("%s %s %d \n", account.getAno(), account.getOwner(), account.getBalence());
+				 for(Account ac : accounts) {
+					 if(ac != null) {						 
+						 System.out.printf("%s %s %d \n", ac.getAno(), ac.getOwner(), ac.getBalance());
 					 }
 				 }
 				 break;
 			 case 3:
 				 System.out.println("--------");
-				 System.out.println("예금");
-				 System.out.println("--------");
-				 System.out.println("계좌번호 : ");
-				 ano = sc.nextLine();
-				 System.out.println("예금액 : ");
-				 balence = Integer.parseInt(sc.nextLine());
-				 for (Account account : accounts){
-					 if(account.equals(ano = sc.nextLine())){
-						 System.out.println(ano = sc.nextLine() + "는 계좌가 존재합니다.");
-					 }
-				 }
+                 System.out.println("입금");
+                 System.out.println("--------");
+                 System.out.print("계좌번호 : ");
+                 ano = sc.nextLine();
+                 System.out.print("입금액 : ");
+                 int depositAmt = Integer.parseInt(sc.nextLine());
+                 
+				Account Check = Account.acCheck(accounts, ano);
+
+                 if(Check != null) {
+                	 Check.setBalance(Check.getBalance() + depositAmt);
+                	 System.out.println("입금이 완료되었습니다.");
+                 }else {
+                	 System.out.println("계좌가 존재하지 않습니다.");
+                 }
 				 
+                 break;
+                 
 			 case 4:
 				 System.out.println("--------");
-				 System.out.println("출금");
-				 System.out.println("--------");
-				 System.out.println("계좌번호 : ");
-				 ano = sc.nextLine();
-				 System.out.println("출금액 : ");
-				 balence = Integer.parseInt(sc.nextLine());
+                 System.out.println("출금");
+                 System.out.println("--------");
+                 System.out.print("계좌번호 : ");
+                 ano = sc.nextLine();
+                 System.out.print("출금액 : ");
+                 int withdrawAmt = Integer.parseInt(sc.nextLine());
+
+                 Account Check2 = Account.acCheck(accounts, ano);
+                 
+                 if(Check2 != null) {
+                	 Check2.setBalance(Check2.getBalance() - withdrawAmt);
+                	 System.out.println("출금이 완료되었습니다.");
+                 }else {
+                	 System.out.println("계좌가 존재하지 않습니다.");
+                 }
+                 break;
 			 case 5:
 				 run = false;
+				 System.out.println("프로그램을 종료합니다.");
+			 default:
+                 System.out.println("잘못된 입력입니다. 다시 선택해주세요.");
+                 break;
 			 }
 		 }
 		 
