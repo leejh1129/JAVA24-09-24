@@ -37,11 +37,10 @@ public class Board {
 		this.content = content;
 	}
 	
-	
-	
 	// 메소드
 //	@Override
 //	public String toString() {
 //		return subject + " : " + content + " : " + writer;
 //	}
+	
 }
