@@ -47,6 +47,7 @@ public class UpdateMain {
 //					String content = rs.getString(2);
 //					System.out.println("변경된 title : " + title);
 //					System.out.println("변경된 content : " + content);
+					
 				}
 			}
 			

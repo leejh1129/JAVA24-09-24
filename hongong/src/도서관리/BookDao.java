@@ -20,8 +20,8 @@ public class BookDao {
 			Class.forName("oracle.jdbc.OracleDriver");
 			// 연결
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", // url
-					"java", // 계정
-					"1234"); // 비밀번호
+					"hr", // 계정
+					"hr"); // 비밀번호
 //			System.out.println("연결성공");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -69,6 +69,7 @@ public class BookDao {
 	// 4. select : 조건에 따른 검색(책제목) 메소드
 	public void select(Book book2) {
 		// 데이터 조회
+		boolean check = false;
 		getOpen();
 		try {
 			String sql = "select * from book where title=?";
@@ -82,9 +83,15 @@ public class BookDao {
 				bk.setWriter(rs.getString(2));
 				bk.setPrice(rs.getInt(3));
 				bk.setBnum(rs.getString(4));
-
+				
 				System.out.println(bk);
+				
+				check = true;
 			}
+			if(!check) {
+				System.out.println("없는도서입니다");
+			}
+			
 			getClose();
 			rs.close();
 			pstmt.close();
@@ -120,7 +127,8 @@ public class BookDao {
 	}
 
 	// 6. delect : 메소드 (북번호 이용)
-	public int delect(Book book3) {
+	public int delete(Book book3) {
+		
 		getOpen();
 		try {
 			// 데이터 삭제
@@ -131,6 +139,12 @@ public class BookDao {
 			int rows = pstmt.executeUpdate();
 //			System.out.println("삭제행 수 : " + rows);
 
+			if(rows == 1) {
+				System.out.println("도서번호" + book3.getBnum() + "삭제 성공");
+			}else {
+				System.out.println(book3.getBnum() + "없는 도서번호입니다");
+			}
+			
 			pstmt.close();
 			getClose();
 			return rows;
@@ -145,7 +159,8 @@ public class BookDao {
 	public int update(Book book4) {
 		getOpen();
 		try {
-			String sql = "" + "update book " + "set price=?, bnum=? " + "where title=?";
+			String sql = ""
+						+ "update book " + "set price=?, bnum=? " + "where title=? ";
 			
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, book4.getPrice());
@@ -153,12 +168,18 @@ public class BookDao {
 			pstmt.setString(3, book4.getTitle());
 			
 			int rows = pstmt.executeUpdate();
+			
+			if(rows == 1) {
+				System.out.println("제목" + book4.getTitle() + "변경성공");
+			}else {
+				System.out.println(book4.getTitle() + "없는 도서입니다");
+			}
+			
 			pstmt.close();
 			getClose();
 			return rows;
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return 0;

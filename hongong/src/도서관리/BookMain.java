@@ -18,9 +18,7 @@ public class BookMain {
 		// 책제목, 변경할 책번호, 변경할 책 가격 입력
 		// 선택6번 : 프로그램 종료
 		Scanner sc = new Scanner(System.in);
-		BookDao dao = null;
-		int cnt = 0;
-		String check = "";
+		BookDao dao = new BookDao();
 		boolean run = true;
 
 		while (run) {
@@ -29,7 +27,7 @@ public class BookMain {
 			System.out.println("=========================================================================");
 			System.out.print("목록 선택 : ");
 			int num = Integer.parseInt(sc.nextLine());
-
+			
 			switch (num) {
 			case 1:
 				System.out.println("도서등록");
@@ -41,15 +39,9 @@ public class BookMain {
 				int price = Integer.parseInt(sc.nextLine());
 				System.out.print("책 번호 : ");
 				String bnum = sc.nextLine();
-				
 				Book book = new Book(title, writer, price, bnum);
-				dao = new BookDao();
-				cnt = dao.insert(book);
-				if(cnt == 1) {
-					System.out.println("추가 성공");
-				}else {
-					System.out.println("추가 실패");
-				}
+				dao.insert(book);
+				
 				break;
 				
 			case 2:
@@ -57,26 +49,19 @@ public class BookMain {
 				System.out.print("도서 제목을 입력하세요 > ");
 				title = sc.nextLine();
 				Book book2 = new Book(title);
-				dao = new BookDao();
 				dao.select(book2);
 				break;
 			case 3:
 				System.out.println("도서 조회(전체)");
-				dao = new BookDao();
 				dao.selectAll();
 				break;
 			case 4:
 				System.out.println("도서삭제");
 				System.out.print("도서 번호를 입력하세요 >");
 				bnum = sc.nextLine();
-				Book book3 = new Book(bnum);
-				dao = new BookDao();
-				cnt = dao.delect(book3);
-				if(cnt == 1) {
-					System.out.println("삭제 성공");
-				}else {
-					System.out.println("삭제 실패");
-				}
+				Book book3 = new Book();
+				book3.setBnum(bnum);
+				dao.delete(book3);
 				break;
 			case 5:
 				System.out.println("도서정보 변경");
@@ -87,14 +72,9 @@ public class BookMain {
 				price = Integer.parseInt(sc.nextLine());
 				System.out.println("변경할 책번호 : ");
 				bnum = sc.nextLine();
-				Book book4 = new Book(title);
-				dao = new BookDao();
-				cnt = dao.delect(book4);
-				if(cnt == 1) {
-					System.out.println("수정 성공");
-				}else {
-					System.out.println("수정 실패");
-				}
+				Book book4 = new Book(title,price,bnum);
+				dao.update(book4);
+				
 				break;
 			case 6:
 				run = false;

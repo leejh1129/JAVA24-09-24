@@ -16,13 +16,20 @@ public class Book {
 		
 	}
 	
-	public Book(String bnum) {
-		this.bnum = bnum;
+	public Book(String title) {
+        this.title = title;
 	}
+
 	
 	public Book(String title, String writer, int price, String bnum) {
 		this.title = title;
 		this.writer = writer;
+		this.price = price;
+		this.bnum = bnum;
+	}
+
+	public Book(String title, int price, String bnum) {
+		this.title = title;
 		this.price = price;
 		this.bnum = bnum;
 	}
@@ -61,7 +68,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "제목 : " + title + " \t " + " 저자 : " + writer + "\t" + "가격 : " + price + "\t" + "책번호 : " + bnum + "]";
+		return "제목 : " + title + " \t " + " 저자 : " + writer + "\t" + "가격 : " + price + "\t" + "책번호 : " + bnum ;
 	}
 
 
